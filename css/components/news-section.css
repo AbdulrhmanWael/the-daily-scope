@@ -1,9 +1,15 @@
 .category-block {
   margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .category-block h2 {
-  margin: 0 0 1rem;
+    display: inline;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    margin: 0 0 2rem;
 }
 
 .category-news {
@@ -19,7 +25,7 @@
   background: #fff;
   border-radius: 10px;
   padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 9px rgba(0, 90, 180, 0.4);
   display: flex;
   flex-direction: column; /* stack image, title, desc, link */
   justify-content: space-between;
@@ -63,14 +69,15 @@
   margin-top: auto;             /* push it to the bottom */
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: #ff5722;
+  background: blue;
   color: #fff;
   text-decoration: none;
   border-radius: 6px;
   font-size: 0.85rem;
   text-align: center;
+  transition: background 0.3s;
 }
 
 .news-card a:hover {
-  background: #e64a19;
+  background: rgb(0, 102, 255);
 }
