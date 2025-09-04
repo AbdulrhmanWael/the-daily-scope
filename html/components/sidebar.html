@@ -1,0 +1,53 @@
+<aside class="p-3">
+  <section id="weather-section" class="mb-3 card p-3 border border-dark rounded">
+    <h5 class="mb-2"><i class="bi bi-cloud-sun"></i> Weather</h5>
+    <p id="weather-info">Loading weather...</p>
+  </section>
+
+  <section id="exchange-section" class="mb-3 card p-3 border border-dark rounded">
+    <h5 class="mb-2"><i class="bi bi-currency-exchange"></i> Exchange Rates</h5>
+
+    <div class="d-flex flex-column gap-2 mb-2">
+      <p class="mb-0">
+        <strong>USD → EGP:</strong>
+        <span id="usd-egp">Loading...</span>
+      </p>
+
+      <hr class="my-1 text-muted" />
+
+      <p class="mb-0">
+        <strong>SAR → EGP:</strong>
+        <span id="sar-egp">Loading...</span>
+      </p>
+    </div>
+
+    <button class="btn btn-sm btn-outline-dark mb-2" type="button" data-bs-toggle="collapse"
+      data-bs-target="#currency-calculator" aria-expanded="false">
+      Open Calculator
+    </button>
+
+    <div id="currency-calculator" class="collapse">
+      <form id="calc-form" class="d-flex flex-column gap-2">
+        <div class="input-group">
+          <input type="number" id="amount" class="form-control" placeholder="Amount" required />
+        </div>
+        <div class="d-flex gap-2">
+          <select id="from-currency" class="form-select"></select>
+          <select id="to-currency" class="form-select"></select>
+        </div>
+        <button class="btn btn-dark btn-sm" type="submit">Convert</button>
+        <div class="d-flex justify-content-center align-items-center">
+          <p id="calc-result" class="mt-2 fs-5 text-muted"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+  <section id="matches-section" class="card p-3 border border-dark rounded">
+    <h5 class="mb-2"><i class="bi bi-trophy"></i> Premier League Live</h5>
+    <ul id="matches-list" class="list-unstyled mb-0">
+      <li>Loading matches...</li>
+    </ul>
+  </section>
+</aside>

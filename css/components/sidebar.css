@@ -1,0 +1,106 @@
+aside {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #000;
+}
+
+aside section.card {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 10px;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+aside section.card:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+aside section h5 {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+#weather-info {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+#exchange-section p {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+#exchange-section .btn {
+  border-radius: 6px;
+}
+
+#calc-form .form-control,
+#calc-form .form-select {
+  font-size: 0.85rem;
+  border-radius: 6px;
+}
+
+#calc-result {
+  font-size: 0.85rem;
+  color: #444;
+}
+
+#matches-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#matches-list li {
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 0.6rem 0.8rem;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+#matches-list li:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.match-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.team-name {
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+  font-weight: 500;
+}
+
+.match-score {
+  font-size: 0.9rem;
+  color: #000;
+  min-width: 50px;
+}
+
+#matches-list small {
+  font-size: 0.75rem;
+  color: #888;
+  display: block;
+  text-align: center;
+}
