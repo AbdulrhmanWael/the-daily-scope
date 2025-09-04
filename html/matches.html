@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/matches.css">
     <link rel="stylesheet" href="../css/components/navbar.css">
@@ -16,7 +17,34 @@
 <body>
     <div id="navbar"></div>
 
-    <!-- Start writing your content here -->
+    <div class="container py-4">
+
+        <h2 class="mb-4 text-center">Premier League Matches</h2>
+
+        <div id="matches-filter" class="mb-4 p-3">
+            <div class="row g-3 align-items-end">
+                <div class="col-md-6">
+                    <label for="teamFilter" class="form-label">Filter by Team</label>
+                    <input type="text" id="teamFilter" class="form-control" placeholder="Enter team name...">
+                </div>
+                <div class="col-md-4">
+                    <label for="dateFilter" class="form-label">Filter by Date</label>
+                    <input type="date" id="dateFilter" class="form-control">
+                </div>
+                <div class="col-md-2">
+                    <button id="filterBtn" class="btn w-100">Filter</button>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="mt-4">Upcoming Matches</h4>
+
+        <div id="upcomingMatches" class="row g-3"></div>
+
+        <h4 class="mt-5">Past Matches</h4>
+
+        <div id="pastMatches" class="row g-3"></div>
+    </div>
 
     <div id="footer"></div>
 
@@ -24,7 +52,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-    <script src="../js/matches.js"></script>
+    <script type="module" src="../js/matches.js"></script>
     <script src="../js/components/navbar.js"></script>
     <script src="../js/components/footer.js"></script>
 </body>
