@@ -1,42 +1,103 @@
-    $(function () {
-    const apiKey = '58cd4b9cb7ceb6221c3ce463740d3157';
-    const categories = ['sports', 'technology', 'health', 'general', 'business', 'entertainment'];
+import { GNEWS_API_KEY } from "../../apiKeys.js";
 
-    categories.forEach(category => {
-        const url = `https://gnews.io/api/v4/top-headlines?category=${category}&apikey=${apiKey}&lang=en&max=10`;
-        
-        $.ajax({
-            url: url,
-            method: 'GET',
-            success: function (data) {
-                console.log(data);
-                const articles = data.articles;
-                const newsSection = $('#news-section');
+export function initNewsSection() {
+  const apiKey = GNEWS_API_KEY;
 
-                const categoryBlock = $(`
-                    <div div class = 'category-block' >
-                        <h2>${category.toUpperCase()}</h2>
-                        <div class = 'category-news'></div>
-                        </div>)
-                    `);
+  const categories = [
+    "sports",
+    "technology",
+    "health",
+    "general",
+    "business",
+    "entertainment",
+  ];
 
-                newsSection.append(categoryBlock);
-                
-                articles.forEach(article => {
-                    const card = $(`
-                    <div class = "news-card">
-                    <img src = "${article.image}" alt = "News Image">
-                    <h3>${article.title}</h3>
-                    <p>${article.description || "No Description Available"}</p>
-                    <a href = "${article.url}" target = '_blank'>Read more</a>
-                    </div>
-                    `);
-                    categoryBlock.find('.category-news').append(card);
-                })
-            },
-            error: function (xhr, status, error) {
-                console.error(`Error: ${status} ${error}`);
-            }
+  const dummyData = {
+    articles: [
+      {
+        title: "Dummy News Title 1",
+        description: "This is a placeholder description for dummy news 1.",
+        url: "https://example.com/news1",
+        image: "https://via.placeholder.com/150",
+      },
+      {
+        title: "Dummy News Title 2",
+        description: "This is a placeholder description for dummy news 2.",
+        url: "https://example.com/news2",
+        image: "https://via.placeholder.com/150",
+      },
+      {
+        title: "Dummy News Title 3",
+        description: "This is a placeholder description for dummy news 3.",
+        url: "https://example.com/news3",
+        image: "https://via.placeholder.com/150",
+      },
+    ],
+  };
+
+  categories.forEach((category) => {
+    // Uncomment this block to use live API:
+    //
+    const url = `https://gnews.io/api/v4/top-headlines?category=${category}&apikey=${apiKey}&lang=en&max=10`;
+
+    $.ajax({
+      url: url,
+      method: "GET",
+      success: function (data) {
+        const articles = data.articles;
+        const newsSection = $("#news-section");
+
+        const categoryBlock = $(`
+          <div class="category-block">
+            <h2>${category.toUpperCase()}</h2>
+            <div class="category-news"></div>
+          </div>
+        `);
+
+        newsSection.append(categoryBlock);
+
+        articles.forEach((article) => {
+          const card = $(`
+            <div class="news-card">
+              <img src="${article.image}" alt="News Image">
+              <h3>${article.title}</h3>
+              <p>${article.description || "No Description Available"}</p>
+              <a href="${article.url}" target="_blank">Read more</a>
+            </div>
+          `);
+          categoryBlock.find(".category-news").append(card);
         });
+      },
+      error: function (xhr, status, error) {
+        console.error(`Error: ${status} ${error}`);
+      },
     });
-});
+
+    // Using dummy data for now
+    //   const data = dummyData;
+
+    //   const articles = data.articles;
+    //   const newsSection = $("#news-section");
+
+    //   const categoryBlock = $(`
+    //     <div class="category-block">
+    //       <h2>${category.toUpperCase()}</h2>
+    //       <div class="category-news"></div>
+    //     </div>
+    //   `);
+
+    //   newsSection.append(categoryBlock);
+
+    //   articles.forEach((article) => {
+    //     const card = $(`
+    //       <div class="news-card">
+    //         <img src="${article.image}" alt="News Image">
+    //         <h3>${article.title}</h3>
+    //         <p>${article.description || "No Description Available"}</p>
+    //         <a href="${article.url}" target="_blank">Read more</a>
+    //       </div>
+    //     `);
+    //     categoryBlock.find(".category-news").append(card);
+    //   });
+  });
+}
