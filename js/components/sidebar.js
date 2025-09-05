@@ -161,7 +161,7 @@ function loadMatches() {
 
   $.ajax({
     url: `https://apiv2.allsportsapi.com/football/`,
-    data: { met: "Livescore", APIkey: ALL_SPORTS_API_KEY, leagueId: 152 },
+    data: { met: "Livescore", APIkey: ALL_SPORTS_API_KEY},
     success: function (data) {
       matchesList.innerHTML = "";
       if (data.result && data.result.length > 0) {

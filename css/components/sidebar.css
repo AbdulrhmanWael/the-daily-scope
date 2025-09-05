@@ -1,6 +1,9 @@
 aside {
   font-family: "Segoe UI", Roboto, sans-serif;
   color: #000;
+  overflow-y: auto;
+  max-height: 2500px;
+  
 }
 
 aside section.card {
