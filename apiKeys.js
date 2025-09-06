@@ -4,3 +4,4 @@ export const ALL_SPORTS_API_KEY =
 export const API_FOOTBALL_KEY = "de7ef924ac13f4113626f371b39e8fa7";
 export const GET_GEO_API_KEY = "1bbc14ffa328e6d7f9417cd833929ebfc0994a34";
 export const GNEWS_API_KEY = "97a2668493e89b71d83fcb75859c7971";
+//"bbe243be8799b4f3cba6a71203111051";

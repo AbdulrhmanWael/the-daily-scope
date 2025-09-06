@@ -7,7 +7,7 @@ const leagueId = 152;
 let allMatches = [];
 
 function loadMatches() {
-  const apiUrl = `https://apiv2.allsportsapi.com/football/?met=Fixtures&leagueId=${leagueId}&from=2024-08-01&to=2025-06-30&APIkey=${apiKey}`;
+  const apiUrl = `https://apiv2.allsportsapi.com/football/?met=Fixtures&leagueId=${leagueId}&from=2025-08-15&to=2025-09-30&APIkey=${apiKey}`;
 
   $.ajax({
     type: "get",
